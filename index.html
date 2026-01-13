@@ -6,72 +6,44 @@
   <title>Interesting Facts</title>
 
   <style>
-    :root {
-      --bg: #f4f4f4;
-      --text: #222;
-      --card: #ffffff;
-      --header: #111827;
-      --button: #4f46e5;
-    }
-
-    body.dark {
-      --bg: #0f172a;
-      --text: #e5e7eb;
-      --card: #1e293b;
-      --header: #020617;
-      --button: #22c55e;
-    }
-
     body {
-      margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      transition: background 0.3s, color 0.3s;
+      margin: 0;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #333;
     }
 
     header {
-      background: var(--header);
+      background: #111827;
       color: white;
       padding: 1.5rem;
       text-align: center;
     }
 
     main {
-      max-width: 700px;
+      max-width: 900px;
       margin: 2rem auto;
       padding: 1rem;
-      text-align: center;
     }
 
-    .fact-card {
-      background: var(--card);
-      padding: 1.5rem;
+    .fact {
+      background: white;
+      padding: 1.2rem;
+      margin-bottom: 1rem;
       border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-      margin-bottom: 1.5rem;
-      font-size: 1.1rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
     }
 
-    button {
-      padding: 10px 18px;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      background: var(--button);
-      color: white;
-      font-size: 1rem;
-      margin: 0.3rem;
-    }
-
-    button:hover {
-      opacity: 0.9;
+    .fact:hover {
+      transform: scale(1.02);
     }
 
     footer {
       text-align: center;
+      color: white;
       padding: 1rem;
-      opacity: 0.7;
+      margin-top: 2rem;
     }
   </style>
 </head>
@@ -79,42 +51,34 @@
 
   <header>
     <h1>🤯 Interesting Facts</h1>
-    <p>Click the button to learn something new</p>
+    <p>Things that might surprise you</p>
   </header>
 
   <main>
-    <div id="fact" class="fact-card">
-      Bananas are berries, but strawberries are not.
+    <div class="fact">
+      🌍 <strong>Bananas are berries</strong>, but strawberries are not.
     </div>
 
-    <button onclick="showRandomFact()">🔄 Random Fact</button>
-    <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+    <div class="fact">
+      🧠 <strong>The human brain</strong> uses about 20% of the body’s total energy.
+    </div>
+
+    <div class="fact">
+      🐙 <strong>Octopuses have three hearts</strong> and blue blood.
+    </div>
+
+    <div class="fact">
+      ⏳ <strong>Honey never spoils.</strong> Archaeologists have found edible honey in ancient tombs.
+    </div>
+
+    <div class="fact">
+      🚀 <strong>Space is completely silent</strong> because there is no air to carry sound.
+    </div>
   </main>
 
   <footer>
-    <p>© 2026 • GitHub Pages Demo</p>
+    <p>© 2026 • Built with HTML & GitHub Pages</p>
   </footer>
-
-  <script>
-    const facts = [
-      "Bananas are berries, but strawberries are not.",
-      "Octopuses have three hearts and blue blood.",
-      "Honey never spoils and can last thousands of years.",
-      "The human brain uses about 20% of the body’s energy.",
-      "There are more stars in the universe than grains of sand on Earth.",
-      "A day on Venus is longer than a year on Venus.",
-      "Wombat poop is cube-shaped."
-    ];
-
-    function showRandomFact() {
-      const randomIndex = Math.floor(Math.random() * facts.length);
-      document.getElementById("fact").textContent = facts[randomIndex];
-    }
-
-    function toggleDarkMode() {
-      document.body.classList.toggle("dark");
-    }
-  </script>
 
 </body>
 </html>
