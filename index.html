@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interesting Facts</title>
+
+  <style>
+    :root {
+      --bg: #f4f4f4;
+      --text: #222;
+      --card: #ffffff;
+      --header: #111827;
+      --button: #4f46e5;
+    }
+
+    body.dark {
+      --bg: #0f172a;
+      --text: #e5e7eb;
+      --card: #1e293b;
+      --header: #020617;
+      --button: #22c55e;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: background 0.3s, color 0.3s;
+    }
+
+    header {
+      background: var(--header);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .fact-card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    button {
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background: var(--button);
+      color: white;
+      font-size: 1rem;
+      margin: 0.3rem;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🤯 Interesting Facts</h1>
+    <p>Click the button to learn something new</p>
+  </header>
+
+  <main>
+    <div id="fact" class="fact-card">
+      Bananas are berries, but strawberries are not.
+    </div>
+
+    <button onclick="showRandomFact()">🔄 Random Fact</button>
+    <button onclick="toggleDarkMode()">🌙 Dark Mode</button>
+  </main>
+
+  <footer>
+    <p>© 2026 • GitHub Pages Demo</p>
+  </footer>
+
+  <script>
+    const facts = [
+      "Bananas are berries, but strawberries are not.",
+      "Octopuses have three hearts and blue blood.",
+      "Honey never spoils and can last thousands of years.",
+      "The human brain uses about 20% of the body’s energy.",
+      "There are more stars in the universe than grains of sand on Earth.",
+      "A day on Venus is longer than a year on Venus.",
+      "Wombat poop is cube-shaped."
+    ];
+
+    function showRandomFact() {
+      const randomIndex = Math.floor(Math.random() * facts.length);
+      document.getElementById("fact").textContent = facts[randomIndex];
+    }
+
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark");
+    }
+  </script>
+
+</body>
+</html>
